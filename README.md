@@ -3,6 +3,7 @@
 
 A modular, agent-based AI framework for autonomously planning, writing, executing, debugging, and improving code — or adapting to other tasks — using local LLMs like [Ollama](https://ollama.com) or cloud-based APIs like OpenAI.
 
+Originally designed to run and complete coding projects on your local ollama instance.
 ---
 
 ## 🚀 Features
@@ -36,19 +37,19 @@ ollama run llama3
 ollama run codestral
 ```
 
-### Using OpenAI (optional):
+### Using OpenAI (optional) (need to add full compatibility still):
 
 Set your API key in an environment variable:
 
 ```bash
 export OPENAI_API_KEY=your-key-here
 ```
-
+or add it to the config file.
 ---
 
 ## ⚙️ Model Configuration
 
-Each agent is model-configurable via `config.py`. You can set environment variables to specify which LLM each agent uses, either local (e.g. Ollama) or remote (e.g. OpenAI):
+Each agent is model-configurable via `config.py`. You can set environment variables to specify which LLM each agent uses, either local (e.g. Ollama) or remote (e.g. OpenAI) you can :
 In our example config.py we use llama3.latest for each model, however you may want to specify specific models for your use case and ensure each model will individually run on your system. 
 ```python
 # config.py
@@ -62,7 +63,7 @@ CONSULTANT_MODEL   = os.getenv('CONSULTANT_MODEL', 'llama3.1:latest')
 BUGFIXER_MODEL     = os.getenv('BUGFIXER_MODEL', 'llama3.1:latest')
 CODER_MODEL        = os.getenv('CODER_MODEL', 'llama3.1:latest')
 
-OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://192.168.1.4:11434')
+OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
 ```
 
 ### Customization Example
