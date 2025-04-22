@@ -9,4 +9,4 @@ REFINER_MODEL = os.getenv('REFINER_MODEL', 'llama3.1:latest')
 CONSULTANT_MODEL = os.getenv('CONSULTANT_MODEL', 'llama3.1:latest')
 BUGFIXER_MODEL = os.getenv('BUGFIXER_MODEL', 'llama3.1:latest')
 CODER_MODEL = os.getenv('CODER_MODEL', 'llama3.1:latest')
-OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://192.168.1.4:11434')
+OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://localhost:11434') #Change to your Ollama server IP
