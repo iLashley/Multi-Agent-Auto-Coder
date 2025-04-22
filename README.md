@@ -1,4 +1,4 @@
-```markdown
+
 # Multi-Agent-Auto-Coder
 
 A modular, agent-based AI framework that can plan, write, run, debug, and improve code automatically — or even tackle non-coding tasks. It was originally built to work with local LLMs using [Ollama](https://ollama.com), but can also use cloud-based models like OpenAI’s.
@@ -39,19 +39,20 @@ ollama run llama3
 ollama run codestral
 ```
 
-### Using OpenAI (optional) (need to add full compatibility still):
+### Using OpenAI
 
-Set your API key in an environment variable:
+Set your API key:
 
 ```bash
 export OPENAI_API_KEY=your-key-here
 ```
+
 ---
 
-## ⚙️ Model Configuration
+## Model Configuration
 
-Each agent is model-configurable via `config.py`. You can set environment variables to specify which LLM each agent uses, either local (e.g. Ollama) or remote (e.g. OpenAI) you can :
-In our example config.py we use llama3.latest for each model, however you may want to specify specific models for your use case and ensure each model will individually run on your system. 
+Each agent is configurable through `config.py`, and you can use any local or API-based model that’s compatible. Set these using environment variables:
+
 ```python
 # config.py
 
@@ -67,28 +68,24 @@ CODER_MODEL        = os.getenv('CODER_MODEL', 'llama3.1:latest')
 OLLAMA_HOST = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
 ```
 
-### Customization Example
-
-Use different models per role by setting environment variables:
+Example:
 
 ```bash
 export ORCHESTRATOR_MODEL="gpt-4"
-export CODER_MODEL="codestral:latest"
+export CODER_MODEL="codestral"
 ```
-
-This allows fine-tuned optimization per task, leveraging any model you have installed locally or accessible via an API.
 
 ---
 
 ## Usage
 
-### Run interactively:
+### Interactive mode:
 
 ```bash
 python main.py
 ```
 
-### Or with CLI flags:
+### With CLI flags:
 
 ```bash
 python main.py --objective "Build a CSV parser" --dry-run
@@ -96,7 +93,7 @@ python main.py --objective "Build a CSV parser" --dry-run
 
 ---
 
-## Folder Structure
+## Project Layout
 
 ```
 agentic_toolset/
@@ -115,27 +112,24 @@ main.py
 
 ---
 
-## Examples
+## Example Tasks (Simple)
 
-### Generate a Code Project:
-
-> "Create a project that logs Fibonacci numbers to a file."
-
-### Future Ideas:
-
-- Write a market research summary on AI regulations in Europe
-- Draft an academic paper in LaTeX
+- Create a project that calculates and logs Fibonacci numbers up to 100.
+- Create a webscraper
+- Make an audio file converter that converts mp3 to wav
 
 ---
 
 ## Roadmap
 
-- [ ] CLI Tooling with agents
-- [x] Dry-run / cleanup flags
-- [ ] Self-updating toolchain
+- [ ] Command-line improvements
+- [x] Dry-run and cleanup flags
+- [ ] Self-updating agent toolchain
 - [ ] Integrated memory (local or vector-based)
-- [ ] Web UI (Gradio / Textual)
+- [ ] Optional web interface (Gradio, Textual)
 
 ---
+
+Open to feedback, contributions, and ideas.
 ```
 
