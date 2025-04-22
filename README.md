@@ -46,7 +46,6 @@ Set your API key in an environment variable:
 ```bash
 export OPENAI_API_KEY=your-key-here
 ```
-or add it to the config file.
 ---
 
 ## ⚙️ Model Configuration
