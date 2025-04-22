@@ -1,5 +1,3 @@
-Here’s your updated `README.md` with a new section that explains how each model/agent is configurable via `config.py`, and that any local or API-based model can be used:
-
 ```markdown
 # 🧠 Multi-Agent-Auto-Coder
 
