@@ -1,5 +1,6 @@
 
-# Multi-Agent-Auto-Coder
+# Multi-Agent-Auto-Coder 
+  (Click on Gif below to open in a new tab)
 ![Multi-Agent-Auto-Coder](https://github.com/user-attachments/assets/3d8fc2d2-9e99-477a-b3c2-b0679f0a1ab5)
 
 A modular, agent-based AI framework that can plan, write, run, debug, and improve code automatically — or even tackle non-coding tasks. It was originally built to work with local LLMs using [Ollama](https://ollama.com), but can also use cloud-based models like OpenAI’s.
