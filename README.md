@@ -1,36 +1,38 @@
 ```markdown
-# 🧠 Multi-Agent-Auto-Coder
+# Multi-Agent-Auto-Coder
 
-A modular, agent-based AI framework for autonomously planning, writing, executing, debugging, and improving code — or adapting to other tasks — using local LLMs like [Ollama](https://ollama.com) or cloud-based APIs like OpenAI.
-
-Originally designed to run and complete coding projects on your local ollama instance.
----
-
-## 🚀 Features
-
-- 🔄 **Task-to-code pipeline**: Agents orchestrate task breakdowns, generate scripts, review output, and self-correct errors.
-- 📁 **Dynamic project structure**: Automatically names and organizes project folders using LLMs.
-- 🧪 **Execution feedback loop**: Runs code in a sandboxed venv and auto-fixes issues.
-- 🧰 **Multi-agent architecture**:
-  - `Orchestrator`: Breaks down goals into sub-tasks
-  - `SubAgent`: Executes individual task steps
-  - `Architect`: Constructs project structure
-  - `CodeReviewer`: Inspects and improves code
-  - `Consultant`: Suggests coding strategies
-  - `Overseer`: Logs and approves outputs
-  - `Coder`: Generates new code blocks
-  - Supports `--dry-run` and `--no-cleanup` flags
+A modular, agent-based AI framework that can plan, write, run, debug, and improve code automatically — or even tackle non-coding tasks. It was originally built to work with local LLMs using [Ollama](https://ollama.com), but can also use cloud-based models like OpenAI’s.
 
 ---
 
-## 🔧 Requirements
+## Features
+
+- **Task-to-code pipeline**: Breaks down tasks, writes code, tests it, and fixes problems in a loop
+- **Project scaffolding**: Builds and names project folders using LLMs
+- **Execution feedback**: Runs code in a temporary virtual environment and tries to correct errors automatically
+- **Modular agents**:
+  - `Orchestrator`: Breaks down goals into steps
+  - `SubAgent`: Handles task execution
+  - `Architect`: Builds the project layout
+  - `CodeReviewer`: Suggests improvements or fixes
+  - `Consultant`: Gives high-level strategy advice
+  - `Overseer`: Logs and approves results
+  - `Coder`: Writes the code
+
+CLI options like `--dry-run` and `--no-cleanup` let you preview or persist results.
+
+---
+
+## Requirements
 
 - Python 3.9+
-- Either:
-  - [Ollama](https://ollama.com) with compatible models (`llama3`, `codestral`, etc.)
-  - Or OpenAI API access (e.g. GPT-4)
+- One of the following:
+  - [Ollama](https://ollama.com) with models like `llama3`, `codestral`, etc.
+  - OpenAI API access (e.g. GPT-4 or GPT-3.5)
 
-### Running with Ollama:
+### Running with Ollama
+
+Make sure the models are installed:
 
 ```bash
 ollama run llama3
@@ -79,7 +81,7 @@ This allows fine-tuned optimization per task, leveraging any model you have inst
 
 ---
 
-## 🧪 Usage
+## Usage
 
 ### Run interactively:
 
@@ -95,7 +97,7 @@ python main.py --objective "Build a CSV parser" --dry-run
 
 ---
 
-## 📦 Folder Structure
+## Folder Structure
 
 ```
 agentic_toolset/
@@ -114,7 +116,7 @@ main.py
 
 ---
 
-## 📌 Examples
+## Examples
 
 ### Generate a Code Project:
 
@@ -127,7 +129,7 @@ main.py
 
 ---
 
-## ✅ Roadmap
+## Roadmap
 
 - [ ] CLI Tooling with agents
 - [x] Dry-run / cleanup flags
